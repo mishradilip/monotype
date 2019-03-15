@@ -1,0 +1,42 @@
+.form-group {
+	@include space (margin,bottom,10px);
+	label {
+		display:inline-block;
+		width:$base-size * 28;
+	}
+	& select {
+		&.form-control {
+			border-radius:4px;
+			height:$base-size * 6;
+			min-width:78px;
+			background:$white-color;
+			width:auto;
+			@include border-default(#809a9f);
+		}
+	}
+	input[type="text"] {
+		&.form-control {
+			background:$white-color;
+			border-radius:4px;
+			width:$full-size - 10;
+			@include border-default(#d2dee2);
+			@include space(padding,top,7px);
+			@include space(padding,bottom,7px);
+			@include space(padding,left,10px);
+			@include space(padding,right,10px);
+		}
+	}
+	&.typography-form-first_row{
+		&:nth-child(3) {
+			@include border(top, 1px, solid, #c6d6da);
+			@include space(padding,top,10px);
+		}
+	}
+}
+
+.advanced-form_row {
+	label {
+		@include space(margin,top,8px);
+		@include space(margin,bottom,8px);
+	}
+}

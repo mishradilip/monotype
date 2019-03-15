@@ -1,0 +1,22 @@
+@mixin flex {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+@mixin align-items($alignval) {
+  -webkit-align-items: $alignval;
+     -moz-align-items: $alignval;
+      -ms-align-items: $alignval;
+          align-items: $alignval;
+}
+
+@mixin justify-content($val) {
+  -webkit-justify-content: $val;
+     -moz-justify-content: $val;
+      -ms-justify-content: $val;
+          justify-content: $val;
+            -ms-flex-pack: $val;
+}

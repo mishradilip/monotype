@@ -1,0 +1,222 @@
+@import "../mixins/_global";
+@import "../mixins/_grid";
+@import "../mixins/_spacing";
+
+.main-wrapper {
+	display:block; 
+	margin:0; 
+	padding:0; 
+	border:0; 
+	font:inherit; 
+	font-size:100%; 
+	overflow:auto; 
+	position:fixed; 
+	top:0; 
+	right:0; 
+	bottom:0; 
+	left:0; 
+	z-index:1040;
+	&_container {
+		margin:20px auto; 
+		padding:0; 
+		border:0; 
+		position:relative; 
+		width:980px;
+		@media (max-width:$break-tab) {
+			width:$full-size;
+		}
+		&-box {
+			margin:0; 
+			padding:0; 
+			font:inherit; 
+			font-size:100%; 
+			position:relative; 
+			background-color: #F4F5F7; 
+			background-clip:padding-box; 
+			outline:none; 
+			width:100%; 
+			@include space(padding,bottom,10px); 
+			box-shadow: 1px 3px 12px #97A3BB;
+		}
+	}
+}
+
+.header-strip {
+	border:0; 
+	word-spacing:2px; 
+	height:auto; 
+	background-color:#90CAD6; 
+	overflow:auto; 
+	padding:10px 15px 10px 20px; 
+	@include flex;
+	@include align-items(center);
+	@include justify-content(space-between);
+	h1 {
+		color:white; 
+		font-size:14px; 
+		text-transform:uppercase; 
+		padding:0; 
+		border:0; 
+		margin:0;
+		font:inherit; 
+		vertical-align:baseline; 
+		line-height:1.4; 
+		font-family:$base-font-family; 
+		font-weight:600;
+	}
+	figure {
+		margin:0;
+	}
+}
+
+.wrapper {
+
+	@include flex;
+	@include align-items(flex-start);
+
+	@media screen and (max-width:$break-tab2) {
+		-webkit-box-orient:horizontal;
+	    -webkit-box-direction:normal;
+	    -ms-flex-flow:row wrap;
+	    flex-flow:row wrap;
+	}
+
+	& .left-section {
+	@include flex;
+	@include align-items(center);
+	height:550px;
+	width:430px;
+	background:$white-color;
+	@include space(margin, top, 10px);
+	@include space(margin, left, 10px);
+	@include space(margin, right, 10px);
+	@media screen and (max-width: $break-tab) {
+		width:$full-size;
+	}
+	@media screen and (max-width:$break-tab2) { 
+		height:auto;
+	}
+		figure {
+			@include space(margin, all, 0px);
+			img {
+				width:$full-size;
+			}
+		}
+	}
+	& .right-section {
+		width:$base-size * 103;
+		@media screen and (max-width: $break-tab) {
+			width:$full-size;
+		}
+		&_wrapper {
+			position:relative;
+			&_setting-row {
+				@include space(margin,top,10px);
+				@include flex;
+				@include align-items(center);
+				@include justify-content(flex-end);
+				& ul {
+					list-style:none;
+					margin:0;
+					li {
+						a {
+						background:#e1ebed; 
+						color:#809a9f; 
+						text-decoration:none; 
+						border:0;
+						height:auto; 
+						background-color:$white-color; 
+						-webkit-border-radius:3px 3px 0 0; 
+						-moz-border-radius:3px 3px 0 0; 
+						-ms-border-radius:3px 3px 0 0; 
+						border-radius:3px 3px 0 0;
+						-webkit-user-select:none;
+						@include space(padding,top,6px);
+						@include space(padding,left,8px);
+						@include space(padding,right,8px);
+						@include space(padding,bottom,5px);
+						@include flex;
+						@include align-items(center);
+						span {
+							@include space(margin,top,-5px);
+							@include space(margin,left,5px);
+						}
+						}
+					}
+				}
+			}
+		}
+
+		& .right-section_wrapper_inner {
+			background-color:$white-color;
+			position:relative;
+			height:520px;
+			font-size:$base-font-size - 2;
+			@include flex;
+			@include align-items(flex-start);
+			@include space(padding, left, 16px);
+			@include space(padding, right, 16px);
+
+			@media screen and (max-width:$break-tab2) { 
+				height:auto;
+			}
+
+			@media screen and (max-width:$break-mobile) {
+			-webkit-box-orient:horizontal;
+		    -webkit-box-direction:normal;
+		    -ms-flex-flow:row wrap;
+		    flex-flow:row wrap;
+			}
+
+			&:after {
+				position:absolute;
+				content:"";
+				background-color:#c6d6d9;
+				width:1px;
+				height:$full-size;
+				top:0;
+				left:0;
+				right:0;
+				margin:auto;
+				@media screen and (max-width:$break-mobile) { 
+					width:$full-size;
+					height:1px;
+					top:65%;
+					transform:translateY(-65%);
+				}
+			}
+			&>div {
+				width:$full-size - 50;
+				@media screen and (max-width:$break-tab2) { 
+					height:auto;
+				}
+				@media screen and (max-width:$break-mobile) { 
+					width:$full-size;
+				}
+			}
+
+			& .right-inner_first {
+				@include space(padding, right, 16px);
+				& .color-theme-box {
+					@include space(margin,top,30px);
+				}
+			}
+			& .right-inner_second {
+				position:relative;
+				height:$full-size;
+				@include space(padding, left, 16px);
+				.right-inner_second_btn-sec {
+					right:0;
+					width:$full-size;
+					text-align:right;
+					@media screen and (min-width:$break-tab2) { 
+						position:absolute;
+						bottom:16px;
+					}
+				}
+			}
+		}
+
+	}
+}
+

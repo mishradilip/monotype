@@ -1,0 +1,67 @@
+@import "../mixins/_buttons";
+@import "../mixins/_global";
+@import "../mixins/_spacing";
+
+* {
+	-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+	color:$base-font-color;
+	font-family:$base-font-family;
+	font-size:$base-font-size;
+	line-height:$base-line-height;
+	background:url('../images/bg.png') repeat-x;
+}
+
+a {
+		text-decoration:none;
+	}
+
+	.bb {
+		
+	}
+
+.btn{
+	&-one{
+		@include btn($btn-primary)
+		&:hover {
+			@include btnhover($btn-primary-hover);
+		}
+
+		&:active {
+			@include btnactions();
+		}
+		&:focus {
+			@include btnactions();
+		}
+	}
+	&-two {
+		@include btn($btn-secondary)
+		&:hover {
+			@include btnhover($btn-secondary-hover);
+		}
+		&:active {
+			@include btnactions();
+		}
+		&:focus {
+			@include btnactions();
+		}
+	}
+}
+
+input:focus {
+  @include border-default($btn-secondary);
+}
+
+h6 {
+	font-size:$base-font-size + 1;
+	line-height:$base-line-height;
+	font-family:$base-font-family;
+	@include space(margin, top, 10px);
+	@include space(margin, bottom, 10px);
+	color:$base-font-color_secondary;
+	font-weight:$medium-font;
+}

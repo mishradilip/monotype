@@ -1,0 +1,37 @@
+@mixin btnactions() {
+  background-image: none;
+  outline: 0;
+  text-shadow: 0px 1px 0px $transparent-white;
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+  position: relative;
+  top: $base-size - 4px;
+}
+
+@mixin btnhover($bgcolor) {
+  border-color: transparent;
+  background-color: $bgcolor;
+}
+
+@mixin btn ($bgcolor) {
+  background:transparent; 
+  color:$white-color; 
+  margin:0; 
+  padding:5px 10px; 
+  border:1px solid transparent; 
+  font-size: $base-font-size - 3px; 
+  vertical-align:middle; 
+  display:inline-block; 
+  margin-bottom: 0; 
+  font-weight:normal; 
+  text-align:center; 
+  white-space:nowrap; 
+  text-transform:uppercase; 
+  letter-spacing:0.8px; 
+  line-height:$base-line-height; 
+  cursor:pointer; 
+  border-radius:$base-size - 2px; 
+  background-color:$bgcolor; 
+  border-color:transparent;
+}
